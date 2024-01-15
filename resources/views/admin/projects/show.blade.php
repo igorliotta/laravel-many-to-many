@@ -10,6 +10,13 @@
               @if ($project->type)
               <p class="card-text"><strong>{{ $project->type->name }}</strong></p>
               @endif
+              
+              <ul>
+                @foreach ($project->technologies as $technology)
+                  <li class="badge rounded-pill bg-primary">{{ $technology->name }}</li>
+                @endforeach
+              </ul>
+            
               <p class="card-text">{{ $project->slug }}</p>
               <p class="card-text">{!! $project->content !!}</p>
               <div class="d-flex gap-2">
